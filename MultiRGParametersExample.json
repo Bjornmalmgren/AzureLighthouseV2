@@ -1,0 +1,109 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mspOfferName": {
+            "value": "Onboarding to Lighthouse"
+        },
+        "mspOfferDescription": {
+            "value": "Onboarding resource groups to Tenant with Azure Lighthouse for Azure Monitoring"
+        },
+        "managedByTenantId": {
+            "value": "<OrganizationsTenantID>"
+        },
+        "resourceGroups":{
+           "value": [
+                {
+                    "rgName": "Key Vault Resource Group",
+                    "authorizations": [{
+                        "principalId": "Principal ID",
+                        "roleDefinitionId": "21090545-7ca7-4776-b22c-e363652d74d2",
+                        "principalIdDisplayName": "Key Vault Reader"
+                    },{ 
+                        "principalId":  "Principal ID", 
+                        "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+                        "principalIdDisplayName": "Lighthouse Contributor" 
+                    }, 
+                    { 
+                        "principalId":  "Principal ID", 
+                        "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
+                        "principalIdDisplayName": "Managed Services Registration assignment Delete Role" 
+                    }
+                ]
+                },
+                {
+                    "rgName": "Log Analytics Monitor Resource Group", 
+                    "authorizations": [{
+                        "principalId":  "Principal ID",
+                        "roleDefinitionId": "73c42c96-874c-492b-b04d-ab87d138a893",
+                        "principalIdDisplayName": "Log Analytics Reader" 
+                    },{
+                        "principalId": "Principal ID",
+                        "roleDefinitionId": "43d0d8ad-25c7-4714-9337-8ba259a9fe05",
+                        "principalIdDisplayName": "Monitoring Reader"
+                    },{ 
+                        "principalId":  "Principal ID", 
+                        "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+                        "principalIdDisplayName": "Lighthouse Contributor" 
+                    }, 
+                    { 
+                        "principalId":  "Principal ID", 
+                        "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
+                        "principalIdDisplayName": "Managed Services Registration assignment Delete Role" 
+                    }]
+                },
+                {
+                    "rgName": "Automation Account Resource Group",
+                    "authorizations":[{
+                        "principalId": "Principal ID",
+                        "roleDefinitionId": "d3881f73-407a-4167-8283-e981cbba0404",
+                        "principalIdDisplayName": "Automation Operator"
+                    },{ 
+                        "principalId":  "Principal ID", 
+                        "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+                        "principalIdDisplayName": "Lighthouse Contributor" 
+                    }, 
+                    { 
+                        "principalId":  "Principal ID", 
+                        "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
+                        "principalIdDisplayName": "Managed Services Registration assignment Delete Role" 
+                    }]
+                },
+                {
+                    "rgName": "Arc Servers Resource Group",
+                    "authorizations":[{
+                        "principalId":"Principal ID",
+                        "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
+                        "principalIdDisplayName": "Reader"
+                    },{ 
+                        "principalId": "Principal ID", 
+                        "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+                        "principalIdDisplayName": "Lighthouse Contributor" 
+                    }, 
+                    { 
+                        "principalId": "Principal ID", 
+                        "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
+                        "principalIdDisplayName": "Managed Services Registration assignment Delete Role" 
+                    }]
+                },{
+                    "rgName": "Virtual Machines Resource Group",
+                    "authorizations":[{
+                        "principalId":"Principal ID",
+                        "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
+                        "principalIdDisplayName": "Reader"
+                    },{ 
+                        "principalId": "Principal ID", 
+                        "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+                        "principalIdDisplayName": "Lighthouse Contributor" 
+                    }, 
+                    { 
+                        "principalId": "Principal ID", 
+                        "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
+                        "principalIdDisplayName": "Managed Services Registration assignment Delete Role" 
+                    }]
+                }
+            ]
+        }
+        
+    }
+}
